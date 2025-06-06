@@ -8,28 +8,39 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://i.imgur.com/B8Z1Kmm.png') center/cover no-repeat;
-      z-index: -1;
-      opacity: 0.3;
-      animation: flickerLightning 3s infinite;
+    body {
+      background: #0f0f0f url('https://i.imgur.com/BuuAIJq.gif') center center / cover no-repeat fixed;
+      animation: backgroundFlash 3s infinite ease-in-out;
     }
-    @keyframes flickerLightning {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.5; }
+    @keyframes backgroundFlash {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.2); }
     }
-    .glow-text { text-shadow: 0 0 6px #7df9ff, 0 0 12px #00f0ff, 0 0 18px #00e0ff; color: #7df9ff; }
-    .hero-gradient { background: linear-gradient(to right, #0f172a, #1e293b); }
-    .lightning-border { box-shadow: 0 0 15px #7df9ff, 0 0 25px #00e0ff, 0 0 40px #00bfff; }
-    .lightning-button { background: linear-gradient(90deg, #7df9ff, #00e0ff); color: #0f172a; font-weight: bold; border-radius: 9999px; padding: 0.75rem 1.5rem; box-shadow: 0 0 10px #7df9ff, 0 0 20px #00e0ff; transition: all 0.3s ease; }
-    .lightning-button:hover { background: #00e0ff; box-shadow: 0 0 25px #00bfff, 0 0 45px #00bfff; }
-    .lightning-background { background: url('https://i.imgur.com/yC0V1YA.jpg') center/cover no-repeat fixed; }
+    .glow-text {
+      text-shadow: 0 0 8px #7df9ff, 0 0 14px #00e0ff, 0 0 22px #00bfff;
+      color: #7df9ff;
+      animation: glowPulse 2.5s ease-in-out infinite alternate;
+    }
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 6px #00f0ff, 0 0 12px #00e0ff, 0 0 18px #00bfff; }
+      100% { text-shadow: 0 0 10px #7df9ff, 0 0 18px #00e0ff, 0 0 30px #00bfff; }
+    }
+    .lightning-border {
+      box-shadow: 0 0 15px #7df9ff, 0 0 25px #00e0ff, 0 0 40px #00bfff;
+    }
+    .lightning-button {
+      background: linear-gradient(90deg, #7df9ff, #00e0ff);
+      color: #0f172a;
+      font-weight: bold;
+      border-radius: 9999px;
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 0 10px #7df9ff, 0 0 20px #00e0ff;
+      transition: all 0.3s ease;
+    }
+    .lightning-button:hover {
+      background: #00e0ff;
+      box-shadow: 0 0 25px #00bfff, 0 0 45px #00bfff;
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans lightning-background">
@@ -113,51 +124,42 @@
 
   <!-- EXPERIENCE -->
   <section id="experience" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl font-bold mb-6 glow-text">Radno iskustvo</h2>
-      <div class="max-w-4xl mx-auto text-left space-y-8 text-base leading-relaxed">
-        <div>
-          <h3 class="text-2xl font-bold">Team Lead / QA Engineer – Ascalab (BridgeHead&nbsp;Software)</h3>
-          <p class="text-gray-400">Oct&nbsp;2022 – Jan&nbsp;2025</p>
-          <ul class="list-disc list-inside space-y-2">
-            <li>Vodio QA tim u Agile okruženju, upravljao sprint zadacima u Jiri i obezbedio pravovremene isporuke.</li>
-            <li>Kreirao User Stories i test planove Gherkin metodom; pripremao detaljne test izveštaje i release note‑ove.</li>
-            <li>Rad na AWS, GCP i Azure okruženjima, osiguravajući performanse cloud aplikacija.</li>
-            <li>Mentorisao juniore, poboljšao procese i uveo AI‑asistiranu automatizaciju testova.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold">Software Engineer – IRVAS d.o.o.</h3>
-          <p class="text-gray-400">Feb&nbsp;2018 – Oct&nbsp;2022</p>
-          <ul class="list-disc list-inside space-y-2">
-            <li>Razvoj HR i payroll modula za Klinički centar Crne Gore.</li>
-            <li>Lead dev inventar sistema za Niš Express (upravljanje skladištem &amp; prodajom).</li>
-            <li>Customizacija softvera Eye Clinic Maja za optimizaciju pacijent podataka.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold">Freelance QA Engineer – iOS aplikacije</h3>
-          <p class="text-gray-400">Sep&nbsp;2016 – Jan&nbsp;2018</p>
-          <p>Manuelno testiranje iOS aplikacija na više uređaja, bug tracking u Jiri, analiza crash logova u Xcode.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold">Computer Sales &amp; Service Specialist – Jakov System</h3>
-          <p class="text-gray-400">Apr&nbsp;2014 – Sep&nbsp;2016</p>
-          <p>Diagnostika, popravka i nadogradnja PC‑eva; prodaja IT opreme i podrška korisnicima.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold">Multimedia Project Assistant – Singidunum University</h3>
-          <p class="text-gray-400">May&nbsp;2012 – Apr&nbsp;2014</p>
-          <p>Audio/video montaža i animacija edukativnog sadržaja (Adobe Premiere, After Effects).</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold">IT Support Technician – MaxBet Sports Betting</h3>
-          <p class="text-gray-400">Jan&nbsp;2010 – May&nbsp;2012</p>
-          <p>On‑site IT podrška za POS i betting terminale; održavanje mrežne infrastrukture.</p>
-        </div>
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-6 glow-text">Radno iskustvo</h2>
+    <div class="max-w-4xl mx-auto text-center space-y-8 text-base leading-relaxed">
+      <div>
+        <h3 class="text-2xl font-bold">Team Lead / QA Engineer – Ascalab (BridgeHead&nbsp;Software)</h3>
+        <p class="text-gray-400">Oct&nbsp;2022 – Jan&nbsp;2025</p>
+        <p class="mt-2">Vodio QA tim u Agile okruženju, upravljao sprint zadacima u Jiri i obezbedio pravovremene isporuke. Kreirao User Stories i test planove Gherkin metodom. Radio na AWS, GCP i Azure. Mentorisao juniore i uveo AI-asistiranu automatizaciju testova.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold">Software Engineer – IRVAS d.o.o.</h3>
+        <p class="text-gray-400">Feb&nbsp;2018 – Oct&nbsp;2022</p>
+        <p class="mt-2">Razvio HR i payroll module za Klinički centar Crne Gore. Predvodio razvoj inventarskog sistema za Niš Express. Customizovao softver za Eye Clinic Maja radi bolje upravljanja podacima.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold">Freelance QA Engineer – iOS aplikacije</h3>
+        <p class="text-gray-400">Sep&nbsp;2016 – Jan&nbsp;2018</p>
+        <p class="mt-2">Testirao iOS aplikacije, koristio Xcode za crash logove, i bug tracker u Jiri. Fokus na regresiju i UI/UX konzistentnost.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold">Computer Sales &amp; Service Specialist – Jakov System</h3>
+        <p class="text-gray-400">Apr&nbsp;2014 – Sep&nbsp;2016</p>
+        <p class="mt-2">Diagnostika i popravka računara, korisnička podrška i prodaja računarske opreme.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold">Multimedia Project Assistant – Singidunum University</h3>
+        <p class="text-gray-400">May&nbsp;2012 – Apr&nbsp;2014</p>
+        <p class="mt-2">Video montaža i animacija obrazovnog sadržaja u Adobe Premiere i After Effects.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold">IT Support Technician – MaxBet Sports Betting</h3>
+        <p class="text-gray-400">Jan&nbsp;2010 – May&nbsp;2012</p>
+        <p class="mt-2">IT podrška na terenu za POS sisteme i kladioničarske terminale.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- EDUCATION -->
   <section id="education" class="py-20 bg-gray-800">
@@ -175,7 +177,7 @@
   <section id="contact" class="py-20 bg-gray-800">
     <div class="container mx-auto px-4 max-w-2xl text-center">
       <h2 class="text-4xl font-bold mb-6 glow-text">Kontakt</h2>
-      <p class="mb-4"></p>
+      <p class="mb-4">Otvoreni ste za saradnju ili imate QA poziciju u gejming/IT industriji? Pišite ili pozovite!</p>
       <p class="mb-2"><i class="fa-solid fa-phone mr-2 text-cyan-400"></i><a href="tel:+4798484061" class="text-cyan-400 underline">+47&nbsp;984&nbsp;84&nbsp;061</a></p>
       <p class="mb-2"><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i><a href="mailto:ivan.savovic@yahoo.com" class="text-cyan-400 underline">ivan.savovic@yahoo.com</a></p>
       <p class="mb-2"><i class="fa-brands fa-linkedin mr-2 text-cyan-400"></i><a href="https://www.linkedin.com/in/ivansavovic/" target="_blank" class="text-cyan-400 underline">linkedin.com/in/ivansavovic</a></p>
@@ -185,7 +187,7 @@
 
   <!-- FOOTER -->
   <footer class="bg-black py-6 text-center text-gray-500">
-    <p></p>
+    <p>&copy; 2025 Ivan Savović. Sva prava zadržana.</p>
   </footer>
 </body>
 </html>
